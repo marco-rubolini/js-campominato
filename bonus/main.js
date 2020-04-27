@@ -28,33 +28,21 @@ function generaNumeroPc(min, max) {
 }
 // In seguito deve chiedere all'utente di inserire un numero alla volta, sempre compreso tra 1 e 100, che sarà la sua giocata.
 if (difficolta == 0) {
-    do {
-        var numeroUtente = parseInt(prompt('Inserisci un numero compreso tra 1 e 100'));
-        console.log(numeroUtente);
-        numeriUtente.push(numeroUtente);
-        console.log((!numeroPc.includes(numeroUtente)));
-        console.log(numeriUtente.length);
-    }
-    while ((numeriUtente.length <= 84) && (!numeroPc.includes(numeroUtente)));
+    var range = 100;
 }   else if (difficolta == 1) {
-    do {
-        var numeroUtente = parseInt(prompt('Inserisci un numero compreso tra 1 e 80'));
-        console.log(numeroUtente);
-        numeriUtente.push(numeroUtente);
-        console.log((!numeroPc.includes(numeroUtente)));
-        console.log(numeriUtente.length);
-    }
-    while ((numeriUtente.length <= 64) && (!numeroPc.includes(numeroUtente)));
+    var range = 80;
 }   else {
-    do {
-        var numeroUtente = parseInt(prompt('Inserisci un numero compreso tra 1 e 50'));
-        console.log(numeroUtente);
-        numeriUtente.push(numeroUtente);
-        console.log((!numeroPc.includes(numeroUtente)));
-        console.log(numeriUtente.length);
-    }
-    while ((numeriUtente.length <= 34) && (!numeroPc.includes(numeroUtente)));
+    var range = 50;
 }
+
+do {
+    var numeroUtente = parseInt(prompt('Inserisci un numero compreso tra 1 e ' + range));
+    console.log(numeroUtente);
+    numeriUtente.push(numeroUtente);
+    console.log((!numeroPc.includes(numeroUtente)));
+    console.log(numeriUtente.length);
+}
+while ((numeriUtente.length < (range - 16)) && (!numeroPc.includes(numeroUtente)));
 // Se il numero è presente nella lista delle mine, la partita termina, altrimenti il gioco continua chiedendo all'utente un altro numero (continua a giocare).
 
 // La partita termina quando il giocatore becca una mina, ossia inserisce un numero "vietato", oppure se raggiunge il numero massimo possibile di numeri consentiti, ossia ha inserito tutti i numeri possibili che non sono mine!
