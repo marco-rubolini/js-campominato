@@ -38,9 +38,12 @@ if (difficolta == 0) {
 do {
     var numeroUtente = parseInt(prompt('Inserisci un numero compreso tra 1 e ' + range));
     console.log(numeroUtente);
-    numeriUtente.push(numeroUtente);
+    if (!numeriUtente.includes(numeroUtente)) {
+        numeriUtente.push(numeroUtente);
+    }
     console.log((!numeroPc.includes(numeroUtente)));
     console.log(numeriUtente.length);
+    console.log(numeriUtente);
 }
 while ((numeriUtente.length < (range - 16)) && (!numeroPc.includes(numeroUtente)));
 // Se il numero è presente nella lista delle mine, la partita termina, altrimenti il gioco continua chiedendo all'utente un altro numero (continua a giocare).
