@@ -1,9 +1,34 @@
+var difficolta = prompt('Scegli una difficoltà da 0 a 2');
+console.log(difficolta);
+
+// for (var i = 0; i <= 15; i++) {
+//     if (difficolta == 0) {
+//         numeroPc.push(generaNumeroPc(1,100));
+//     } else if (difficolta == 1) {
+//         numeroPc.push(generaNumeroPc(1,80));
+//     }
+//      else {
+//         numeroPc.push(generaNumeroPc(1,50));
+//      }
+// }
+
+
 // //Il computer deve generare 16 numeri casuali tra 1 e 100, che saranno le "mine".
 var numeroPc = [];
 var numeriUtente = [];
+// for (var i = 0; i <= 15; i++) {
+//     numeroPc.push(generaNumeroPc(1,100));
+//
+// }
 for (var i = 0; i <= 15; i++) {
-    numeroPc.push(generaNumeroPc(1,100));
-
+    if (difficolta == 0) {
+        numeroPc.push(generaNumeroPc(1,100));
+    } else if (difficolta == 1) {
+        numeroPc.push(generaNumeroPc(1,80));
+    }
+     else {
+        numeroPc.push(generaNumeroPc(1,50));
+     }
 }
 console.log(numeroPc);
 
@@ -20,7 +45,17 @@ do {
 // Se il numero è presente nella lista delle mine, la partita termina, altrimenti il gioco continua chiedendo all'utente un altro numero (continua a giocare).
 
 // La partita termina quando il giocatore becca una mina, ossia inserisce un numero "vietato", oppure se raggiunge il numero massimo possibile di numeri consentiti, ossia ha inserito tutti i numeri possibili che non sono mine!
-} while ((numeriUtente.length <= 84) && (!numeroPc.includes(numeroUtente)));
+// } while ((numeriUtente.length <= 84) && (!numeroPc.includes(numeroUtente)));
+
+} while (!numeroPc.includes(numeroUtente))
+    if (difficolta == 0) {
+        numeriUtente.length <= 84;
+    } else if (difficolta == 1){
+        numeriUtente.length <= 64;
+    }
+    else {
+        numeriUtente.length <= 34;
+    };
 
 // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l'utente ha inserito un numero consentito; in altre parole, deve comunicare all'utente quante giocate ha fatto prima di perdere.
 
